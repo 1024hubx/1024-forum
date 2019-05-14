@@ -1,11 +1,11 @@
 package models
 
 import (
-	"cmsserver/util"
 	"encoding/json"
 	"fmt"
+	"forum/util"
 
-	"cmsserver/util/config"
+	"forum/util/config"
 
 	"github.com/go-redis/redis"
 	"github.com/lunny/log"

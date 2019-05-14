@@ -1,9 +1,9 @@
 package util
 
 import (
-	"cmsserver/util/config"
 	"crypto/rand"
 	"fmt"
+	"forum/util/config"
 	"github.com/gin-gonic/gin"
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"github.com/pkg/errors"

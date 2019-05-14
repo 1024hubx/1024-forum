@@ -51,4 +51,19 @@ type (
 		Stafflog  string
 		Sqllog    string
 	}
+
+	// 微信
+	Wx struct {
+		AppID          string
+		AppSecret      string
+		Token          string
+		EncodingAESKey string
+	}
+
+	Game struct {
+		ChapterUnlock string
+		Scope         string
+		State         string
+		UnlockSuccess string
+	}
 )

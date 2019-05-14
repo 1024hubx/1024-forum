@@ -25,6 +25,8 @@ var (
 	RedisConfig   = &Redis{}
 	Mes           = &Message{}
 	Log           = &Logs{}
+	WxConfig      = &Wx{}
+	GameConfig    = &Game{}
 )
 
 // 加载命令行文件
@@ -65,7 +67,12 @@ func InitConf() {
 	RedisConfig.RedisWriteTimeout = RedisConfig.RedisWriteTimeout * time.Second
 	mapTo("Message", Mes)
 	mapTo("LogUrl", Log)
+
+	mapTo("Wx", WxConfig)
+	mapTo("Game", GameConfig)
+
 	Gra = new(inject.Graph) //加载auth配置文件
+
 }
 
 // 配置文件结构转结构体

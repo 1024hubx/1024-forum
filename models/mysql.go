@@ -1,8 +1,8 @@
 package models
 
 import (
-	"cmsserver/util/config"
 	"fmt"
+	"forum/util/config"
 	"log"
 	"os"
 	"time"

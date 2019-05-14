@@ -1,11 +1,12 @@
 package main
 
 import (
-	"cmsserver/models"
-	"cmsserver/routers"
-	"cmsserver/util/config"
 	"context"
 	"fmt"
+	"forum/models"
+	"forum/routers"
+
+	"forum/util/config"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
@@ -18,13 +19,14 @@ func main() {
 	//初始化定时任务
 	//util.InitCron()
 	config.InitConf()
+
 	if config.ServerConfig.ServerRunEnv == "master" {
 		gin.SetMode(gin.ReleaseMode)
 	} else {
 		gin.SetMode(gin.DebugMode)
 	}
 	models.InitMysql()
-	models.InitRedis()
+	// models.InitRedis()
 	router := routers.InitRouter()
 	//初始化日志
 

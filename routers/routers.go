@@ -1,9 +1,10 @@
 package routers
 
 import (
-	"cmsserver/util"
+	"forum/util"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	"github.com/lunny/log"
 	"net/http"
 )
 
@@ -13,8 +14,8 @@ func InitRouter() *gin.Engine {
 	router.Use(gin.Recovery())
 	router.Use(cors.Default())
 	router.Use(errorMiddleware()) //全局错误处理
-
 	//增加对NoMethod和NoRoute的处理，注意放在路由底部
+
 	router.NoMethod(func(c *gin.Context) {
 		c.JSON(
 			http.StatusMethodNotAllowed,
@@ -39,6 +40,7 @@ func errorMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		defer func() {
 			if nerr := recover(); nerr != nil {
+				log.Stack()
 				err := nerr.(error)
 				util.FmtSyslog(err.Error())
 			}
