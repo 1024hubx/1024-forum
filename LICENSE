@@ -1,0 +1,8 @@
+简单说明。
+1 兼容之前版本 所有controller 下建立版本号 放置相应版本代码
+2 中间价放在middleware中 
+3 路由根据不同模块分组处理 在routers下新建路由文件 并在routers.go中引用 
+4 本项目采用gomod 方式  clone 后 在项目所在目录 go mod init 1024-forum  go run main/main.go 即可启动
+5 doc 文件夹存放sql维护脚本。以及相关说明 
+6 开发模式如下  新建路由->controller->service->models 具体详见demo.go相关文件
+7 作为一个菜逼。还请大佬们多多指教。。共同进步
